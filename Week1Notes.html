@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Week1Notes.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h1 id="week-1-notes">Week 1 notes</h1>
+<p>Rel freq = Fraction of times ann outcome (or event) occurs</p>
+<p>if $f_n = #$
+times an outcome occurs in n experimental trials, then
+$Rel.Freq = \frac{f_n}{n}$</p>
+<p>e.g. Suppose we toss a fair coin n times and count how many times h appears the plot Rel. Freq. vs n</p>
+<p>Relative Frequency is bounded by 0 and 1 ie.</p>
+<p>$$ 0 \leq Rel.Freq \leq 1$$</p>
+<p>In this example Rel.Freq is highly variable in the initial few throws but very quickly settles down to an approximation of a horizontal line. If the coin is a fair coin ie $P(head) = 0.5$ then the rel.freq with settle down at approximately $0.5$ if the probability of heads was different then the rel freq would settle down at that.</p>
+<p>Probability === long-run Relative Frequency</p>
+<p>$$Pr(H) = \lim_{n\rightarrow \infty} Rel.Freq_n = \frac{1}{2}$$</p>
+<p>An Event is any combination of elementary outcomes. Capital letters are often to denote events</p>
+<p>eg. A = tails appears on one toss of coin = {T}</p>
+<p>B = A number greater than 4 appears on a dice roll = {5, 6}
+`
+C = At least one H appears in two tosses of a coin = {HT, TH, HH}</p>
+<p>$$
+\begin{aligned}
+Pr(A) &amp;= Pr(T) \
+Pr(B) &amp;= Pr(5 or 6) = Pr(5) + Pr(6) \
+Pr(C) &amp;= Pr(HT \ or \ HH \ or \ TH ) = Pr(HT) + Pr(HH) + Pr(TH)
+\end{aligned}
+$$</p>
+<ul>
+<li>
+<p>this is only the case because 5 and 6 (and HT,HH,TH) are E.O and so <strong>Mutually Exclusive</strong></p>
+</li>
+<li>
+<p>Two events are sais to be mutually exclusive if they have no elementary outcomes in common.</p>
+</li>
+</ul>
+<p>For Mutually Exclusive events:</p>
+<p>$$Pr(D \cup E) = Pr(D \ or \ E \ or \ both) = Pr(D) + Pr(E)$$</p>
+<p>For non mutually exclusive events:</p>
+<p>$$Pr(D \cup E) = Pr(D \ or \ E or \ both) = Pr(D) + Pr(E) - Pr(D \cap E)$$</p>
+<ul>
+<li>The formula for the non mutually exclusive events is the general formula due to the probability of the Probability of the intersection between two mutually exclusive events is zero</li>
+</ul>
+<p>In General:</p>
+<p>$$
+\begin{aligned}
+P(A \cup B) &amp;= P(A) + P(B) - P(A \cap B)
+\end{aligned}
+$$</p>
+<h2 id="lecture">Lecture</h2>
+<p>$$
+\begin{aligned}
+P(A \cup B) &amp; = P(A) + P(B) - P(A\cap B) \
+P(A \cap B) &amp;= 0 \leftrightarrow A,B \ are \ mutually \ exclusive
+\end{aligned}
+$$
+Mutually exclusive is NOT the same as Independent</p>
+<h3 id="axioms-of-probability">Axioms of Probability</h3>
+<p>$$
+\begin{aligned}
+0 \leq P(A) &amp;\leq 1 \
+P(S) &amp;= 1 \
+P(A) + P(\bar{A}) &amp;= 1, where \ \bar{a} = A^c \ is \ the \ event \ &quot;A \ does \ NOT \ happen&quot; \
+\therefore P(\bar{A}) &amp; = 1 - P(A)
+\end{aligned}
+$$</p>
+<p>Suppose we do an experiment n times and each time, we observe the value of a RANDOM VARIABLE, say X</p>
+<p>$$\bar{X}<em>n = \frac{X_1 + X_2 +... + X_n}{n} = \frac{\sum</em>{i=1}^n X_i}{n} = SAMPLE \ MEAN$$</p>
+<ul>
+<li>NOTE: Sample Mean is different from the population mean, sample mean is the mean of n samples where as the population mean is the mean of $\infty$ samples.</li>
+</ul>
+<p>$$
+\begin{aligned}
+1 + 2 + 3 + 4 + .... + n-1 + n &amp;= \sum_{x=1}^n x \
+n + (n-1) + (n-2) + (n-3) + .... + 2 + 1 &amp;= \sum_{x=1}^n x \
+(n+1) + (n+1) + (n+1) + (n+1) + .... + (n+1) + (n+1) &amp;= 2 \sum_{x=1}^n x \
+\rightarrow n(n+1) &amp; = 2 \sum_{x=1}^n x \
+\sum_{x=1}^n x &amp;= \frac{n(n+1)}{2}
+\end{aligned}
+$$</p>
+<h3 id="discrete-sample-spaces">Discrete Sample Spaces</h3>
+<p>Elements can be listed (separated by commas)</p>
+<ul>
+<li>e.g. {HH, HT, TH, TT}, {1,2,3,4,5,6},{0,1,2,3,...} $=&gt;$ Countably Infinite</li>
+</ul>
+<h3 id="continuous-sample-space">Continuous Sample Space</h3>
+<p>Doesn't make sense (or it is impossible) to list the elements - Need to describe S using intervals</p>
+<ul>
+<li>e.g Temperature in a room, heights, ....</li>
+</ul>
+<p>$$
+\begin{aligned}
+S &amp;= {x: -273.15 \leq x \leq 100} \rightarrow Temperature \
+S &amp;= {x: x \geq 0} \
+\end{aligned}
+$$</p>
+<h4 id="examples">Examples</h4>
+<ol>
+<li>
+<p>Toss coin 3 times, note # heads</p>
+<ul>
+<li>$S = {0, 1, 2, 3 }$</li>
+</ul>
+</li>
+<li>
+<p>Pick a random number b/w 0 and 1</p>
+<ul>
+<li>$S = {x:0\leq x \leq 1 }$</li>
+</ul>
+</li>
+</ol>
+<h3 id="empty-set">Empty Set</h3>
+<p>$$
+\begin{aligned}
+\emptyset &amp;= { } \
+P(\emptyset) &amp;= 0 \
+\emptyset &amp;= S^c \
+P(\emptyset) &amp;= 1-P(S) \
+&amp;= 1 -1 \
+&amp;= 0
+\end{aligned}
+$$</p>
+<h3 id="other-notation">Other Notation</h3>
+<ul>
+<li>$x \in A$ &quot;x is an element of the set A&quot;</li>
+<li>$A \subset B$ &quot;A is a subset of B&quot;</li>
+<li>$A \subseteq B$ &quot;A is a subset of B or identical to B&quot;</li>
+</ul>
+<h3 id="properties">Properties</h3>
+<ul>
+<li>De Morgan</li>
+</ul>
+<p>$$
+\begin{aligned}
+(A \cup B)^c &amp;= A^c \cap B^c \
+(A \cap B)^c &amp;= A^c \cup B^c
+\end{aligned}
+$$</p>
+<p>$$
+\begin{aligned}
+P(\cup_{k=1}^{\infty}A_k) = \sum_{k=1}^{\infty} P(A_k)
+\end{aligned}
+$$</p>
+<h2 id="friday-tut">Friday Tut</h2>
+<p>Example 2.10</p>
+<ul>
+<li>Coin tossed 3 times
+<ul>
+<li>
+<p>$S = {HHH, THH, HTH,HHT,TTH,THT,HTT,TTT}$</p>
+</li>
+<li>
+<p>$P(2 heads in 3 tosses) = \frac{3}{8} = P(THH)+P(HTH)+P(HHT)$</p>
+<ul>
+<li>The answer is only true if the coin is fair if isn't then the probability will still be the sum of P(2 heads in 3 toss)</li>
+</ul>
+</li>
+<li>
+<p>$P(at least 2 heads) = \frac{1}{2}$</p>
+</li>
+<li>
+<p>$P(at least 2 tails) = 1 - P(at least 2 heads)$</p>
+</li>
+<li>
+<p>if $P(H) = \frac{3}{4}, P(T)= \frac{1}{4}$ what is P(at least 2 tails)</p>
+<ul>
+<li>$P(TTH) + P(THT) + P(HTT) + P(TTT) = \frac{3}{64} + \frac{3}{64} + \frac{3}{64} + \frac{1}{64} = \frac{5}{32}$</li>
+</ul>
+</li>
+<li>
+<p>We have also assumed that the individual tosses are INDEPENDENT of each other.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="counting-methods">Counting Methods</h3>
+<p>The number of distinct ordered k-tuples $(x_1,x_2,...,x_k)$ with components x from a set with $n_i$ distinct elements is $\prod_{i=1}^{k} n_i$</p>
+<ul>
+<li>e.g multiple choice test with k questions, such that $Q_1$ has $n_1$ possible answers and $Q_k$ has $n_k$ possible answers</li>
+</ul>
+<p>e.g if:</p>
+<p>$$
+\begin{aligned}
+k = 6, n = 4, n_2 = 7, n_3 &amp;=v2 , n_4 =5, n_5 = 3, n_6 = 3 \
+possibilities = 4 * 7<em>2</em>5<em>3</em>3 &amp;= 2520
+\end{aligned}
+$$</p>
+<p>Sampling with replacement and ordering</p>
+<ul>
+<li>Choosing k objects from n distinct objects, with replacement
+<ul>
+<li>ie. select object, note what it is, then replace it, select again, ....</li>
+<li>The number of ordered k-tuples $(x_1, x_2, ..., x_k)$ is $n^k$</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>
